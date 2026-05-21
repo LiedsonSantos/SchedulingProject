@@ -7,6 +7,7 @@ import project.SchedulingProject.repository.SchedulingRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -18,7 +19,6 @@ public class SchedulingService {
     public Scheduling save(Scheduling scheduling) {
         LocalDateTime SchedulingTime = scheduling.getSchedulingDateTime();
         LocalDateTime EndTime = scheduling.getSchedulingDateTime().plusHours(1);
-        ;
 
         Scheduling scheduled = schedulingRepository.findByServiceAndSchedulingDateTimeBetween(scheduling.getService(), SchedulingTime, EndTime);
 
@@ -33,7 +33,7 @@ public class SchedulingService {
 
     }
 
-    public Scheduling findSchedulingToday(LocalDate Date) {
+    public List<Scheduling> findSchedulingToday(LocalDate Date) {
         LocalDateTime initialDateTime = Date.atStartOfDay();
         LocalDateTime finalDateTime = Date.atTime(23, 59, 59);
 
@@ -46,7 +46,6 @@ public class SchedulingService {
         if (Objects.isNull(schedule)) {
             throw new RuntimeException("Scheduling not found");
         }
-
         scheduling.setId(schedule.getId());
         return schedulingRepository.save(scheduling);
     }
