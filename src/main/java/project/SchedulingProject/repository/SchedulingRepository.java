@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import project.SchedulingProject.infrastructue.entity.Scheduling;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 public interface SchedulingRepository extends JpaRepository<Scheduling,Integer> {
@@ -15,7 +16,7 @@ public interface SchedulingRepository extends JpaRepository<Scheduling,Integer> 
     @Transactional
     void deleteBySchedulingDateTimeAndClient(LocalDateTime schedulingDateTime, String client);
 
-    Scheduling findBySchedulingDateTimeBetween(LocalDateTime initialDateTime, LocalDateTime finalDateTime);
+    List<Scheduling> findBySchedulingDateTimeBetween(LocalDateTime initialDateTime, LocalDateTime finalDateTime);
 
     Scheduling findBySchedulingDateTimeAndClient(LocalDateTime schedulingDateTime, String client);
 
