@@ -2,7 +2,7 @@ package project.SchedulingProject.repository;
 
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import project.SchedulingProject.infrastructue.entity.Scheduling;
+import project.SchedulingProject.entity.Scheduling;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,4 +1,4 @@
-package project.SchedulingProject.infrastructue.entity;
+package project.SchedulingProject.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
