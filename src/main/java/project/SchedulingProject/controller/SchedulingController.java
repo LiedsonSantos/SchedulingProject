@@ -3,7 +3,7 @@ package project.SchedulingProject.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import project.SchedulingProject.infrastructue.entity.Scheduling;
+import project.SchedulingProject.entity.Scheduling;
 import project.SchedulingProject.service.SchedulingService;
 
 import java.time.LocalDate;

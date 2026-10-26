@@ -2,7 +2,7 @@ package project.SchedulingProject.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import project.SchedulingProject.infrastructue.entity.Scheduling;
+import project.SchedulingProject.entity.Scheduling;
 import project.SchedulingProject.repository.SchedulingRepository;
 
 import java.time.LocalDate;
